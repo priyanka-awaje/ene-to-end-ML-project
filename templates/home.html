@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <h1>
+        Car Price Prediction
+    </h1>
+</head>
+
+<body>
+
+ <form action="{{url_for('predict')}}" method="post"> 
+
+<table class="center">
+<tr>
+<td><h3>Car Registration Year</h3></td>
+<td><input type='text' name='year' required></td>
+</tr>
+<tr>
+    <td><h3>Car Price(In Lakhs)</h3></td>
+    <td><input type='text' name='price' required></td>
+</tr>   
+<tr>
+    <td><h3>Kilometer Run</h3></td>
+    <td><input type='text' name='km_driven' required></td>
+</tr>
+
+<tr>
+<td> <h3>Number of owners(0 or 1 or 2)</h3></td>
+<td><input type="text" name="owner" required></td>
+</tr>
+
+<tr>
+    <td><h3>Fuel Type</h3></td>
+    <td>
+        <select name="fuel_type" required>
+            <option value="Petrol">Petrol</option>
+            <option value="Disel">Disel</option>
+            <option value="CNG">CNG</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td><h3>Delaer or Owner</h3></td>
+    <td>
+        <select name="seller_type" required>
+            <option value="Dealer">Dealer</option>
+            <option value="Individual">Individual</option>
+         </select>
+    </td>
+</tr>
+
+
+<tr>
+    <td><h3>Transmission Type</h3></td>
+    <td>
+        <select name="transmission_type" required>
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+         </select>
+    </td>
+</tr>
+
+</table>
+
+
+<br>
+<br>
+<button type="submit" class="button">Calculate Selling Price</button>
+
+
+<br>
+<br>
+
+
+<h3>{{ prediction_text }}</h3>
+
+</form>  
+
+</body>
+
+
+
+</html>
